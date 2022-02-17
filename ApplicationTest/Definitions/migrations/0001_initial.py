@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('jobposting_title', models.CharField(max_length=200)),
                 ('jobposting_description', models.TextField()),
-                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='TestSite.company')),
+                ('company', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Definitions.company')),
             ],
         ),
         migrations.CreateModel(
@@ -34,7 +34,7 @@ class Migration(migrations.Migration):
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('applicant_name', models.CharField(max_length=200)),
                 ('applicant_email', models.CharField(max_length=200)),
-                ('jobposting', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='TestSite.jobposting')),
+                ('jobposting', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='Definitions.jobposting')),
             ],
         ),
     ]
