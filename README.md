@@ -1,3 +1,1 @@
 # ApplicationTest
-
-Der ApplicationTest  
