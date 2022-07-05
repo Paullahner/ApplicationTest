@@ -1,22 +1,22 @@
-name: sync_test
+name: GitlabSync
+
 on:
-  push:
+  - push
+  - delete
 
 jobs:
-  test: # make sure the action works on a clean machine without building
+  sync:
     runs-on: ubuntu-latest
+    name: Git Repo Sync
     steps:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - name: Sync Git Branch Action
-      # You may pin to the exact commit or the version.
-      # uses: zent-contrib/sync-git-branch@f4e89a1773c5fc1aa37bb6f879da51448e23d935
-      uses: zent-contrib/sync-git-branch@v1.0.0
-      env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    - uses: wangchucheng/git-repo-sync@v0.1.0
       with:
-        # SSH URL of the source repository. Defaults to the repository this actions runs in.
-        source-repo: git@github.com:Paullahner/ApplicationTest.git
-        # SSH URL of the destination repository.
-        destination-repo: git@gitlab.com:Paullahner/MySyncProject.git
+        # Such as https://github.com/wangchucheng/git-repo-sync.git
+        target-url: ${{ secrets.TARGET_URL }}
+        # Such as wangchucheng
+        target-username: ${{ secrets.TARGET_USERNAME }}
+          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS\_TOKEN }}
+        target-token: ${{ secrets.TARGET_TOKEN }}
