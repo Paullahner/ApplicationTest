@@ -5,18 +5,12 @@ on:
   - delete
 
 jobs:
-  sync:
-    runs-on: ubuntu-latest
-    name: Git Repo Sync
+  publish:
+    name: "Publish"
+    runs-on: [self-hosted, Linux, X64]
     steps:
-    - uses: actions/checkout@v2
+    - uses: icub-tech-iit/gh-action-repo-selective-sync@v1.0.0
       with:
-        fetch-depth: 0
-    - uses: wangchucheng/git-repo-sync@v0.1.0
-      with:
-        # Such as https://github.com/wangchucheng/git-repo-sync.git
-        target-url: ${{ secrets.TARGET_URL }}
-        # Such as wangchucheng
-        target-username: ${{ secrets.TARGET_USERNAME }}
-          # You can store token in your project's 'Setting > Secrets' and reference the name here. Such as ${{ secrets.ACCESS\_TOKEN }}
-        target-token: ${{ secrets.TARGET_TOKEN }}
+        recipe-file: '.publish/recipe.yml'
+        token-source: ${{ secrets.MY_GITHUB_TOKEN }}
+        token-target: ${{ secrets.TARGET_TOKEN }}
