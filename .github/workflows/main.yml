@@ -11,5 +11,5 @@ jobs:
         fetch-depth: 0
     - uses: ./
       with:
-        ssh_private_key: secrets.SSH_PRIVATE_KEY
+        ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
         target_repo_url: git@gitlab.com:Paullahner/MySyncProject.git
