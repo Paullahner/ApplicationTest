@@ -13,6 +13,8 @@ jobs:
       # You may pin to the exact commit or the version.
       # uses: zent-contrib/sync-git-branch@f4e89a1773c5fc1aa37bb6f879da51448e23d935
       uses: zent-contrib/sync-git-branch@v1.0.0
+      env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       with:
         # SSH URL of the source repository. Defaults to the repository this actions runs in.
         source-repo: git@github.com:Paullahner/ApplicationTest.git
