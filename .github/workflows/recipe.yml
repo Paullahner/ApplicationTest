@@ -1,0 +1,9 @@
+source:
+  copy_from:
+    - ".publish/README.md"
+target:
+  repo: "https://gitlab.com/Paullahner/MySyncProject.git"
+  maxsize_commit_MB: 1000
+  commit_message: "just publishing"
+  copy_to:
+    - "README.md"
