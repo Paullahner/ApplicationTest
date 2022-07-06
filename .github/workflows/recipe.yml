@@ -1,9 +1,0 @@
-source:
-  copy_from:
-    - ".publish/README.md"
-target:
-  repo: "Paullahner/MyTestSync.git"
-  maxsize_commit_MB: 1000
-  commit_message: "just publishing"
-  copy_to:
-    - "README.md"
