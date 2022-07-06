@@ -1,5 +1,3 @@
 Paullahner/MyTestSync:
-  - source: .idea
-    dest: .idea
-  - source: README.md
-    dest: README
+  - source: workflows/
+    dest: .github/workflows/
