@@ -1,5 +1,3 @@
-Paullahner/ApplicationTest:
-  - .github/workflows/action.yml
 Paullahner/MyTestSync:
-  - source: workflows/
+  - source: .github/workflows/
     dest: .github/workflows/
