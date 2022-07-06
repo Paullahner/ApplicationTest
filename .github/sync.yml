@@ -1,3 +1,0 @@
-git@gitlab.com:Paullahner/MySyncProject.git:
-  - source: .idea
-    dest: .idea
