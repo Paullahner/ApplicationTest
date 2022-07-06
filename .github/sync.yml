@@ -1,0 +1,3 @@
+Paullahner/MyTestSync:
+  - source: .github/workflows/
+    dest: .github/workflows/
