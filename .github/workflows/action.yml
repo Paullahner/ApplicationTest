@@ -11,6 +11,6 @@ jobs:
     steps:
     - uses: icub-tech-iit/gh-action-repo-selective-sync@v1.0.0
       with:
-        recipe-file: 'Paullahner/ApplicationTest/.github/workflows/recipe.yml'
+        recipe-file: "Paullahner/ApplicationTest/.github/workflows/recipe.yml"
         token-source: main
         token-target: ${{ secrets.MY_GITHUB_TOKEN }}
