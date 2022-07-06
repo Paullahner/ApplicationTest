@@ -1,16 +1,13 @@
-name: GitlabSync
-
+name: Sync Files
 on:
-  - push
-  - delete
-
+  push:
 jobs:
-  publish:
-    name: "Publish"
+  sync:
     runs-on: ubuntu-latest
     steps:
-    - uses: icub-tech-iit/gh-action-repo-selective-sync@v1.0.0
-      with:
-        recipe-file: "Paullahner/ApplicationTest/.github/workflows/recipe.yml"
-        token-source: main
-        token-target: ${{ secrets.MY_GITHUB_TOKEN }}
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Run GitHub File Sync
+        uses: BetaHuhn/repo-file-sync-action@v1
+        with:
+          GH_PAT: ${{ secrets.MY_GITHUB_TOKEN }}
