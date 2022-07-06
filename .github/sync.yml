@@ -1,0 +1,5 @@
+Paullahner/MyTestSync:
+  - source: .idea
+    dest: .idea
+  - source: README.md
+    dest: README
